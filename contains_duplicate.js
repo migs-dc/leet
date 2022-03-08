@@ -30,7 +30,7 @@ var containsDuplicate = function(nums) {
 // time: o(n)
 // space: o(n)
 
-//  var containsDuplicate = function(nums) {
+ var containsDuplicate = function(nums) {
 
     let hash = new Map();
     
