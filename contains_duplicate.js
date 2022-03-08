@@ -11,7 +11,19 @@
 // a faster method would be to sort the array first
 // time: o(n log n)
 
+var containsDuplicate = function(nums) {
 
+    let sorted = nums.sort();
+    
+    for (let i=0; i<nums.length-1; i++){
+        if (nums[i] === nums[i+1]) { return true }
+    }
+    
+    return false;
+    
+};
+
+* BEST SOLUTION *
 
 // an even faster on would be using a hash map
 // by sacrificing a little bit of space to improve time
@@ -32,6 +44,8 @@
     return false;
     
 };
+
+* ----------------- *
 
 var containsDuplicate = function(nums) {
     
