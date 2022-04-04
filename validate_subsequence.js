@@ -13,10 +13,11 @@ function isValidSubsequence(array, sequence) {
                   return false;
               }
           }
-          
-          return true;
       }
+      
+      return true;
   }
   
   // Do not edit the line below.
   exports.isValidSubsequence = isValidSubsequence;
+  
