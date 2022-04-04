@@ -23,14 +23,14 @@ var containsDuplicate = function(nums) {
     
 };
 
-* BEST SOLUTION *
+// * BEST SOLUTION *
 
 // an even faster on would be using a hash map
 // by sacrificing a little bit of space to improve time
 // time: o(n)
 // space: o(n)
 
- var containsDuplicate = function(nums) {
+var containsDuplicate = function(nums) {
 
     let hash = new Map();
     
@@ -45,7 +45,7 @@ var containsDuplicate = function(nums) {
     
 };
 
-* ----------------- *
+// * ----------------- *
 
 var containsDuplicate = function(nums) {
     
