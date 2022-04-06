@@ -17,4 +17,7 @@
     }
     
     return res; // return res, -1 is returned if no identical chars are found
+
+    // time = O(n) cause we only iterate throug the array string once
+    // space = O(n) we only store the unique characters we come across 
 };
