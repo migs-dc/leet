@@ -7,19 +7,21 @@ var isValid = function(s) {
         [')', '('],
         [ ']', '['],
         ['}', '{']
-    ]);
+    ]); // hash map for the matching parentheses
     
-    let stack = "";
+    let stack = []; // stack to check if open parentheses were all closed
     
-    for ( let i=0; i<s.length; i++){
-        if (s[i] === "(" || s[i] === "[" || s[i] === "{" ){
-            stack += s[i];
-        } else {
+    for ( let i=0; i<s.length; i++){ // iterate through string
+        if (s[i] === "(" || s[i] === "[" || s[i] === "{" ){ // it the character is open parenthesis
+            stack += s[i];                                  // simply place on stack
+        } else { // if the char is a close parenthesis
             if ( stack.slice(-1) === hashmap.get(s[i]) ) stack = stack.slice(0, -1);
+                // check the last char in the stack. if it's the corresponding parenthesis pop stack
             else return false;
+                // else the string is invalid. return false
         }
     }
     
-    if (stack === "") return true;
-    else return false;
+    if (stack === "") return true; // if stack was cleared return true
+    else return false; // if stack was not cleared return false
 };
