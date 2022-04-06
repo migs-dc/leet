@@ -1,8 +1,12 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
 var isValid = function(s) {
     let hashmap = new Map ([
-      [')', '('],
-      [']', '['],
-      ['}', '{']
+        [')', '('],
+        [ ']', '['],
+        ['}', '{']
     ]);
     
     let stack = "";
@@ -11,10 +15,11 @@ var isValid = function(s) {
         if (s[i] === "(" || s[i] === "[" || s[i] === "{" ){
             stack += s[i];
         } else {
-            if ( stack.slice(-1) === hashmap.get(s[i]) ) stack = stack.slice(-1);
+            if ( stack.slice(-1) === hashmap.get(s[i]) ) stack = stack.slice(0, -1);
             else return false;
         }
     }
     
-    return true;
+    if (stack === "") return true;
+    else return false;
 };
