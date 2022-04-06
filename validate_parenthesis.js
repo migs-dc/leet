@@ -13,9 +13,9 @@ var isValid = function(s) {
     
     for ( let i=0; i<s.length; i++){ // iterate through string
         if (s[i] === "(" || s[i] === "[" || s[i] === "{" ){ // it the character is open parenthesis
-            stack += s[i];                                  // simply place on stack
+            stack.push(s[i]);                                  // simply place on stack
         } else { // if the char is a close parenthesis
-            if ( stack.slice(-1) === hashmap.get(s[i]) ) stack = stack.slice(0, -1);
+            if ( stack[stack.length-1] === hashmap.get(s[i]) ) stack.pop();
                 // check the last char in the stack. if it's the corresponding parenthesis pop stack
             else return false;
                 // else the string is invalid. return false
