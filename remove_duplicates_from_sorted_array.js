@@ -3,8 +3,23 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    
+    k = 1;
+
+    for (let i=0; i<nums.length-1; i++){
+        if (nums[i] === nums[i+1]){
+            nums[i+1] = "_";
+            for (let j=i+1; j<nums.length-1; j++){
+                let temp = nums[j];
+                nums[j] = nums[j]+1;
+                nums[j+1] = nums[j];
+            }
+        } else {
+            k++;
+        }
+    }
+    return k;
 };
+
 
 // feels really wasteful
 // iterate through array
