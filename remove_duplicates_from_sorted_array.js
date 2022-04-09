@@ -1,21 +1,21 @@
 /**
  * @param {number[]} nums
  * @return {number}
- */
+*/
+
  var removeDuplicates = function(nums) {
-    k = 0;
-    p = 1;
+    if (nums.length === 0) return 0;
     
-    while (p < nums.length){
-        if (nums[k] === nums[p]){
-            p++;
-        } else {
-            nums[k+1] = nums[p];
-            k++;
-            p++;
+    let p1 = 0;
+    
+    for (let p2 = 1; p2 < nums.length; p2++){
+        if (nums[p1] !== nums[p2]){
+            p1++;
+            nums[p1] = nums[p2];
         }
     }
-    return k++;
+    
+    return p1 + 1;
 };
 
 // 2 pointer solution
