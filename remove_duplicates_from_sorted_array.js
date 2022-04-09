@@ -20,14 +20,29 @@ var removeDuplicates = function(nums) {
     return k;
 };
 
+// 2 pointer solution
 
-// feels really wasteful
-// iterate through array
-// if i === i+1
-    // make i+1 = ""
-    // swap i+1 with the next elem until it reaches the end
-// if i != 1
-    // k++
+    // p1 = 0
+    // p2 = 1
+
+    // while p2 < nums.length
+    //     if p1 = p2
+    //         nums[p1+1] = nums[p2]
+    //         p1++
+    //         p2++
+    //     else
+    //         p2++
+    // end
+    // return p1+1
+
+// brute force pseudo code
+
+    // iterate through array
+    // if i === i+1
+        // make i+1 = ""
+        // swap i+1 with the next elem until it reaches the end
+    // if i != 1
+        // k++
 
 
 // return k
