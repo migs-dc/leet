@@ -2,22 +2,20 @@
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function(nums) {
-    k = 1;
-
-    for (let i=0; i<nums.length-1; i++){
-        if (nums[i] === nums[i+1]){
-            nums[i+1] = "_";
-            for (let j=i+1; j<nums.length-1; j++){
-                let temp = nums[j];
-                nums[j] = nums[j]+1;
-                nums[j+1] = nums[j];
-            }
+ var removeDuplicates = function(nums) {
+    k = 0;
+    p = 1;
+    
+    while (p < nums.length){
+        if (nums[k] === nums[p]){
+            p++;
         } else {
+            nums[k+1] = nums[p];
             k++;
+            p++;
         }
     }
-    return k;
+    return k++;
 };
 
 // 2 pointer solution
@@ -43,6 +41,23 @@ var removeDuplicates = function(nums) {
         // swap i+1 with the next elem until it reaches the end
     // if i != 1
         // k++
-
-
 // return k
+
+//old answer didn't work
+// var removeDuplicates = function(nums) {
+//     k = 1;
+
+//     for (let i=0; i<nums.length-1; i++){
+//         if (nums[i] === nums[i+1]){
+//             nums[i+1] = "_";
+//             for (let j=i+1; j<nums.length-1; j++){
+//                 let temp = nums[j];
+//                 nums[j] = nums[j]+1;
+//                 nums[j+1] = nums[j];
+//             }
+//         } else {
+//             k++;
+//         }
+//     }
+//     return k;
+// };
