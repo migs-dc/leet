@@ -4,6 +4,23 @@
  */
  var moveZeroes = function(nums) {
     // two pointers,
-    // one iterates through entire nums.
+    // p1 iterates through entire nums.
     // p2 looks for non-zeros to swap to the 0s that p1 finds
+    
+//     let p2 = 0;
+    
+//     for (let p1=0; p1<nums.length; p1++){
+        
+//     }
+    
+    let anchor = 0;
+    for (let explorer = 0; explorer < nums.length; explorer++){
+        if (nums[explorer] !== 0){
+            let temp = nums[anchor];
+            nums[anchor] = nums[explorer];
+            nums[explorer] = temp;
+            
+            anchor++
+        }
+    }
 };
