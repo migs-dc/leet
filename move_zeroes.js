@@ -14,13 +14,13 @@
 //     }
     
     let anchor = 0;
-    for (let explorer = 0; explorer < nums.length; explorer++){
-        if (nums[explorer] !== 0){
-            let temp = nums[anchor];
+    for (let explorer = 0; explorer < nums.length; explorer++){ // iterate through all elems 
+        if (nums[explorer] !== 0){          // if a non zero is found
+            let temp = nums[anchor];        // swap anchor with explorer
             nums[anchor] = nums[explorer];
             nums[explorer] = temp;
             
-            anchor++
+            anchor++                        // move anchor
         }
     }
 };
