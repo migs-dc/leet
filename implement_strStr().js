@@ -5,6 +5,7 @@
  */
  var strStr = function(haystack, needle) {
     var res = -1;                           // result
+    if (needle.length === 0) return 0;
     if (haystack.length < needle.length) return res // edge case
     
     for (let i=0; i<haystack.length; i++){  // iterate through haystack
@@ -26,3 +27,22 @@
 
 // time = O(m*n) or maybe O(n^2)
 // space = 0(1) not storing anything
+
+// simple solutino using split
+
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+ var strStr = function(haystack, needle) {
+    if (needle == "") return 0;
+
+    const word = haystack.split(needle);
+    if (word.length == 1) {
+        return -1
+    }
+    
+    return word[0].length
+    
+};
