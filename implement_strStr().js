@@ -38,11 +38,11 @@
  var strStr = function(haystack, needle) {
     if (needle == "") return 0;
 
-    const word = haystack.split(needle);
-    if (word.length == 1) {
-        return -1
+    const word = haystack.split(needle);    // split haystack string using needle 
+    if (word.length == 1) {                 // if haystack wasn't split word would only have 1 elem
+        return -1                           // return -1
     }
     
-    return word[0].length
+    return word[0].length                   // else return length of first elem because that will denote the start of the needle in the haystack
     
 };
