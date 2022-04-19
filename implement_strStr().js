@@ -5,6 +5,7 @@
  */
  var strStr = function(haystack, needle) {
     var res = -1;                           // result
+    if (haystack.length < needle.length) return res // edge case
     
     for (let i=0; i<haystack.length; i++){  // iterate through haystack
         if (haystack[i] === needle[0]){     // current elem in haystack is same as first elem in needle
@@ -21,3 +22,7 @@
     
     return res; // -1 will just be returned if needle is not found
 };
+
+
+// time = O(m*n) or maybe O(n^2)
+// space = 0(1) not storing anything
