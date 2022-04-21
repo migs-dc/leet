@@ -9,6 +9,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
+
  var deleteDuplicates = function(head) {
     
     let currentNode = head; // getting the ref of the head of the LL from head and putting it on our currentNode
@@ -22,5 +23,20 @@
     }
     
     return head;                                        // after that we simply return our head and all it's pointing too now
+    
+};
+
+// cleaner solution, but somehow longer;
+
+ var deleteDuplicates = function(head) {
+    
+    let curNode = head;
+    
+    while(curNode && curNode.next){
+        if (curNode.val === curNode.next.val) curNode.next = curNode.next.next;
+        else curNode = curNode.next;
+    }
+    
+    return head;
     
 };
