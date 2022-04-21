@@ -26,13 +26,13 @@
     
 };
 
-// cleaner solution, but somehow longer;
+// cleaner solution. putting !== null somehow makes it faster??
 
- var deleteDuplicates = function(head) {
+var deleteDuplicates = function(head) {
     
     let curNode = head;
     
-    while(curNode && curNode.next){
+    while(curNode !== null && curNode.next !== null){
         if (curNode.val === curNode.next.val) curNode.next = curNode.next.next;
         else curNode = curNode.next;
     }
@@ -40,3 +40,6 @@
     return head;
     
 };
+
+// time = O(n)
+// space = O(1)
