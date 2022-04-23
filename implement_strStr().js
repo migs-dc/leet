@@ -3,7 +3,7 @@
  * @param {string} needle
  * @return {number}
  */
- var strStr = function(haystack, needle) {
+var strStr = function(haystack, needle) {
     var res = -1;                           // result
     if (needle.length === 0) return 0;
     if (haystack.length < needle.length) return res // edge case
@@ -35,7 +35,7 @@
  * @param {string} needle
  * @return {number}
  */
- var strStr = function(haystack, needle) {
+var strStr = function(haystack, needle) {
     if (needle == "") return 0;
 
     const word = haystack.split(needle);    // split haystack string using needle 
