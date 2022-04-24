@@ -3,7 +3,7 @@
  * @param {string} b
  * @return {string}
  */
- function(a, b) {
+ function addBinary(a, b) {
     let refStr = a.length >= b.length ? a : b;
     let otherStr = (refStr === a ? b : a);
   
