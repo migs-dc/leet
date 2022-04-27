@@ -23,3 +23,6 @@ var mySqrt = function(x) {        // binary search
     
     return left - 1; // if left = right it means there is no exact sqrt in the range. so the one before the left is the closest one to the sqrt
 };
+
+// space: O(1) no additional data structure or stored
+// time: O(log n) the data set is halfed every loop
