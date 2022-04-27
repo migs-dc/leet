@@ -1,23 +1,25 @@
 /**
- * @param {string} a
- * @param {string} b
- * @return {string}
+ * @param {number} x
+ * @return {number}
  */
-const mySqrt = function (x) {
-    let left = 0;
+
+var mySqrt = function(x) {        
+    let left = 1;
     let right = x;
-
-    while (left <= right) {
-        const mid = left + Math.floor((right - left) / 2);
-      const value = mid ** 2;
-
-        if (value < x) {
-            left = mid + 1;
-        } else if (value > x) {
-            right = mid - 1;
-        } else {
+    
+    if (x < 2) return x;
+    
+    while (left < right) {
+        let mid = left + Math.floor ((right - left) / 2);
+        
+        if (mid * mid === x) {
             return mid;
+        } else if (mid * mid > x){
+            right = mid;
+        } else if (mid * mid < x){
+            left = mid + 1;
         }
     }
-    return right;
+    
+    return left - 1;
 };
