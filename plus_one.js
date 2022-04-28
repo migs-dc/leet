@@ -16,3 +16,6 @@ var plusOne = function(digits){
     return digits;                          // just return digits after
 
 };
+
+// time: O(n) - we only iterate through the array at worst case senario
+// space: O(1) - no new data store
