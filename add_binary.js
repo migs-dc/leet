@@ -3,8 +3,15 @@
  * @param {string} b
  * @return {string}
  */
+
 var addBinary = function(a, b) {
-    
+  let carry = 0;
+  let res = "";
+  
+  let ap = a.length-1;
+  let bp = b.length-1;
+  
+  while
 };
 
 /* pseudo code:
