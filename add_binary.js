@@ -4,14 +4,26 @@
  * @return {string}
  */
 
-var addBinary = function(a, b) {
-  let carry = 0;
-  let res = "";
+ var addBinary = function(a, b) {
+  let ans="";
+  let carry=0;
   
-  let ap = a.length-1;
-  let bp = b.length-1;
-  
-  while
+  while(a || b || carry){
+    let sum = +a.slice(-1) + +b.slice(-1)+carry;
+
+    if(sum>1){
+      ans=sum%2+ans;
+      carry=1;
+    }else{
+      ans=sum+ans;
+      carry=0;
+    }
+    // remove the last index
+    a=a.slice(0,-1);
+    b=b.slice(0,-1);
+  }
+
+ return ans;
 };
 
 /* pseudo code:
