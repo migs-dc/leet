@@ -4,28 +4,24 @@
  * @return {string}
  */
 
- var addBinary = function(a, b) {
-  let ans="";
-  let carry=0;
+var addBinary = function(a, b) {
+  let res = "";
+  let carry = 0;
   
-  while(a || b || carry){
-    let sum = +a.slice(-1) + +b.slice(-1)+carry;
-
-    if(sum>1){
-      ans=sum%2+ans;
-      carry=1;
-    }else{
-      ans=sum+ans;
-      carry=0;
-    }
-    // remove the last index
-    a=a.slice(0,-1);
-    b=b.slice(0,-1);
+  while (a || b || carry){
+      let sum = +a.slice(-1) + +b.slice(-1) + carry;
+      if (sum > 1){
+          res = sum % 2 + res;
+          carry = 1;
+      } else {
+          res  = sum + res;
+          carry = 0;
+      }
+      a = a.slice(0, -1);
+      b = b.slice(0, -1);
   }
-
- return ans;
+  return res; 
 };
-
 /* pseudo code:
 
   iterate through both strings at the same time
