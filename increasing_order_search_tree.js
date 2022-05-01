@@ -11,17 +11,5 @@
  * @return {TreeNode}
  */
 const increaseBST = (root) => {
-    let result = new TreeNode(0);
-    let temp = result;
 
-    function rec(node) {
-        if (node === null) return;
-        rec(node.left);
-        temp.right = new TreeNode(node.val);
-        temp = temp.right;
-        rec(node.right);
-    }
-
-    rec(root);
-    return result.right
 };
