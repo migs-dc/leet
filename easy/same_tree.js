@@ -23,8 +23,13 @@
         // if they are the same it means we can go deper in the tree. starting with the right recursively
 };
 
+
+// time: O(n) - length of the tree, since we just traverse the tree at worst case
+// space: O(1) - don't really store anything
+
 var isSameTree = function(p, q) {
     if (p === null || q === null) return p === q;
     if (p.val !== q.val) return false;
     return isSameTree(p.right, q.right) && isSameTree(p.left, q.left);
 };
+
