@@ -23,6 +23,8 @@ var isMirror = function(tree1, tree2){ // helper function
     return isMirror(tree1.left, tree2.right) && isMirror(tree1.right, tree2.left)   // if they both do we can check their children recursively by passing the correspoing pairs
 };
 
+// time: O(n) only need to traverse the entire tree once at worst case
+// space: O(1) no storing
 
 var isSymmetric = function(root) {
     if (root === null) return true; 
