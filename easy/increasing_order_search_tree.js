@@ -10,6 +10,6 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
- const increaseBST = (root) => {
+const increaseBST = (root) => {
 
 };
