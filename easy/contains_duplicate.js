@@ -11,7 +11,7 @@
 // a faster method would be to sort the array first
 // time: o(n log n)
 
-var containsDuplicate = function(nums) {
+ var containsDuplicate = function(nums) {
 
     let sorted = nums.sort();
     
