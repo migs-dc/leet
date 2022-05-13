@@ -27,6 +27,9 @@ let getHeight = function(node) { // helper function that uses recursion to check
     return Math.max(left, right) + 1; // if it gets to this point it means that it and it's children are not unbalanced. just add the height so far "Math.max(left, right)" so that it's parent can be checked
 }
 
+// time: O(n) - just iterating through all nodes once
+// space: O(1) - just storing the heights of the left and right of the node and it's not stored of each node just left and right used by all children up to the parent
+
 // WATCH VID AGAIN sometime
 
 // no comments part
