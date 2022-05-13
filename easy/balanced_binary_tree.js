@@ -11,6 +11,27 @@
  * @return {boolean}
  */
 var isBalanced = function(root) {
+    if (root === null) return true; // just testing edge cases
+
+    return getHeight(root) !== -1; // calls helper function that will check if any node is unbalanced
+};
+
+let getHeight = function(node) { // helper function that uses recursion to check trees
+    if (node === null) return 0;  // checks if the node is null or basically not a child
+
+    let left = getHeight(node.left);    // sends the left and right children recursively to check if they are unbalanced 
+    let right = getHeight(node.right);  // or if their children are unbalanced and so on
+
+    if (left === -1 || right === -1 || Math.abs(left - right) > 1) return -1; // if a unbalanced node is detected -1 is passed all throughout until the top so that the first call of getHeight(root) returns -1
+
+    return Math.max(left, right) + 1; // if it gets to this point it means that it and it's children are not unbalanced. just add the height so far "Math.max(left, right)" so that it's parent can be checked
+}
+
+// WATCH VID AGAIN sometime
+
+// no comments part
+
+var isBalanced = function(root) {
     if (root === null) return true;
 
     return getHeight(root) !== -1;
@@ -26,4 +47,3 @@ let getHeight = function(node) {
 
     return Math.max(left, right) + 1;
 }
-
