@@ -33,7 +33,6 @@ let getHeight = function(node) { // helper function that uses recursion to check
 // WATCH VID AGAIN sometime
 
 // no comments part
-
 var isBalanced = function(root) {
     if (root === null) return true;
 
