@@ -23,7 +23,15 @@ var minDepth = function(root) {
         while (numberOfNodes > 0){
             let currentNode = queue.shift();
             
-            
+            if (currentNode.left === null && currentNode.right === null){
+                depth++;
+                return depth;
+            } 
+            if (currentNode.left !== null) queue.push(currentNode.left);
+            if (currentNode.right !== null) queue.push(currentNode.right);
+
+            numberOfNodes--;
         }
+        depth++;
     }
 };
