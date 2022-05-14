@@ -34,6 +34,8 @@ var minDepth = function(root) {
     }
 };
 
+// time: O(n) - we are only really checking each node once
+// space: 0(n) - only really storing the nodes and even immediately deleting them after checking so really it's just the children stored at a time
 
 //no comments
 var minDepth = function(root) {
