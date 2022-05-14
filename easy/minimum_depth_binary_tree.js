@@ -11,5 +11,19 @@
  * @return {number}
  */
 var minDepth = function(root) {
-    
+    if (root === null) return 0;
+
+    let queue = [];
+    queue.push(root);
+    let depth = 0;
+
+    while (queue.length !== 0){
+        let numberOfNodes = queue.length;
+
+        while (numberOfNodes > 0){
+            let currentNode = queue.shift();
+            
+            
+        }
+    }
 };
