@@ -10,15 +10,15 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-const increaseBST = (root) => {
+ var increasingBST = function(root) {
     let head = new TreeNode('dummy');
     let cursor = head;
 
-    inoder(root);
+    inorder(root);
 
     return head.right;
 
-    function inoder(node){
+    function inorder(node){
         if(node === null) return;
 
         inorder(node.left);
