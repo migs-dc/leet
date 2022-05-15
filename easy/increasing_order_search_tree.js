@@ -28,3 +28,6 @@ var increasingBST = function(root) {
         inorder(node.right);            // check the right node next
     }
 };
+
+// time: O(n) - just travers n amount of nodes
+// space: O(n) - we make a new list of n nodes as well
