@@ -10,22 +10,21 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
- var increasingBST = function(root) {
-    let head = new TreeNode('dummy');
-    let cursor = head;
+var increasingBST = function(root) {
+    let head = new TreeNode('dummy');   // initialize dummy head of new tree so that we can just return head.right later as our final result
+    let cursor = head;                  // cursor denotes current node in the new tree
 
-    inorder(root);
+    inorder(root);                      // call helper function
+    return head.right;                  // return all but the dummy node
 
-    return head.right;
+    function inorder(node){             // helper function - where to recursion occurs
+        if(node === null) return;       // just return if node is null
 
-    function inorder(node){
-        if(node === null) return;
+        inorder(node.left);             // first send the left of the node so that it's the first thing that gets added to the new tree
 
-        inorder(node.left);
+        cursor.right = new TreeNode(node.val);      // add node to the right of the new tree 
+        cursor = cursor.right;                      // move cursor (pointer) to the newest node added
 
-        cursor.right = new TreeNode(node.val);
-        cursor = cursor.right;
-
-        inorder(node.right);
+        inorder(node.right);            // check the right node next
     }
 };
