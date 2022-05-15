@@ -11,5 +11,21 @@
  * @return {TreeNode}
  */
 const increaseBST = (root) => {
-    
+    let head = new TreeNode('dummy');
+    let cursor = head;
+
+    inoder(root);
+
+    return head.right;
+
+    function inoder(node){
+        if(node === null) return;
+
+        inorder(node.left);
+
+        cursor.right = new TreeNode(node.val);
+        cursor = cursor.right;
+
+        inorder(node.right);
+    }
 };
