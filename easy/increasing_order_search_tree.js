@@ -31,3 +31,5 @@ var increasingBST = function(root) {
 
 // time: O(n) - just travers n amount of nodes
 // space: O(n) - we make a new list of n nodes as well
+
+// code this again
