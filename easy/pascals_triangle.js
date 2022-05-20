@@ -2,6 +2,6 @@
  * @param {number} numRows
  * @return {number[][]}
  */
- var generate = function(numRows) {
+var generate = function(numRows) {
     
 };
