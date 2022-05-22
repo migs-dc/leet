@@ -11,6 +11,6 @@
  * @param {number} targetSum
  * @return {boolean}
  */
- var hasPathSum = function(root, targetSum) {
+var hasPathSum = function(root, targetSum) {
     
 };
